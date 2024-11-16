@@ -20,6 +20,18 @@
               "icon": "lucide-file",
               "title": "README"
             }
+          },
+          {
+            "id": "2fa02d0165c0014a",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "paper/01-code-generation.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "01-code-generation"
+            }
           }
         ]
       }
@@ -123,5 +135,8 @@
     }
   },
   "active": "00b32db12994e606",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "paper/01-code-generation.pdf",
+    "README.md"
+  ]
 }

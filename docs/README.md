@@ -25,14 +25,14 @@
 
 ##### Code Generation Papers
 * [Competition-Level Code Generation with AlphaCode](https://arxiv.org/abs/2203.07814)
+	* Approch used by Deep Mind for code generation
+	* 
  
 ##### General Program Induction Papers 
 * [Human-level concept learning through probabilistic program induction](https://www.cs.cmu.edu/~rsalakhu/papers/LakeEtAl2015Science.pdf)
 * [Dream Coder](https://arxiv.org/pdf/2006.08381)
-* 
 
 ##### Reinforcement Learning Applied in Mathematics 
 * [AlphaProof](https://deepmind.google/discover/blog/ai-solves-imo-problems-at-silver-medal-level/)
 	* [David Silvers Talk - RLC2024](https://www.youtube.com/watch?v=pkpJMNjvgXw&list=PLEA9Mnr-L18lI_I-EkyAc1-gXgBj52oV5&index=4)
 * [AlphaGeometry](https://www.nature.com/articles/s41586-023-06747-5)
-*

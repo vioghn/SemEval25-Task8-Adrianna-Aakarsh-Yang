@@ -1,7 +1,10 @@
 # Papers 
+* [Semeval 2025 Task Homepage](https://www.codabench.org/competitions/3360/)
+
+##### Deadlines
+* Due: January 9, 2025 at 1:00 AM GMT+1
 
 ##### Original SemEval Task-8
-
 [Question Answering over Tabular Data with DataBench: A Large-Scale Empirical Evaluation of LLM](./paper/00-origin-paper.pdf)
 
 * [Benchmark](https://github.com/cicl-iscl/SemEval25-Task8-Adrianna-Aakarsh-Yang/blob/main/notebooks/baseline.ipynb)
@@ -28,7 +31,6 @@
 * [Competition-Level Code Generation with AlphaCode](https://arxiv.org/abs/2203.07814)
 	* Approch used by Deep Mind for code generation
 	* 
- 
 ##### General Program Induction Papers 
 * [Human-level concept learning through probabilistic program induction](https://www.cs.cmu.edu/~rsalakhu/papers/LakeEtAl2015Science.pdf)
 * [DreamCoder: Growing generalizable, interpretable knowledge with wake-sleep Bayesian program learning](https://arxiv.org/pdf/2006.08381)

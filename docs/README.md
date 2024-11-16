@@ -8,8 +8,10 @@
 ##### Shared Resources
 
 * Dataset [Google Drive](https://drive.google.com/drive/folders/1VhYY48JWrJ0c2YgyblSlqWfHTcJeVuRD)
+* Raw Data [Hugging Face Raw Tables](https://huggingface.co/datasets/cardiffnlp/databench)
 * [Obsedian: Markdown Editing](https://obsidian.md/)
 * [Overleaf](https://www.overleaf.com/)
+* []
 
 
 ##### Original SemEval Task-8

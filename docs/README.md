@@ -11,7 +11,6 @@
 * Raw Data [Hugging Face Raw Tables](https://huggingface.co/datasets/cardiffnlp/databench)
 * [Obsedian: Markdown Editing](https://obsidian.md/)
 * [Overleaf](https://www.overleaf.com/)
-* []
 
 
 ##### Original SemEval Task-8
@@ -34,7 +33,7 @@
 ##### Reinforcement Learning - Introduction
 
 * A good reinforcement learning tutorial can be found on [Hugging Face](https://huggingface.co/learn/deep-rl-course/unit4/policy-gradient)
-* For reference material we can use
+* For reference material we can use [Sutton and Barto](http://incompleteideas.net/book/RLbook2020.pdf)
 * Several Lectures on Reinforcement Learning are available on youtube: 
 	* [David Silver's Lectures](https://www.youtube.com/watch?v=2pWv7GOvuf0&list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ) 
 	* [Emma Brunskill](https://www.youtube.com/watch?v=FgzM3zpZ55o&list=PLoROMvodv4rOSOPzutgyCTapiGlY2Nd8u)

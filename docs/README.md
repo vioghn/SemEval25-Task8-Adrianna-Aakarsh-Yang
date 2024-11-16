@@ -4,6 +4,7 @@
 
 ##### Deadlines
 * Due: January 9, 2025 at 1:00 AM GMT+1
+* 53 days =  1272 hrs
 
 ##### Shared Resources
 

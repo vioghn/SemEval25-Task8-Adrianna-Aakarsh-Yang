@@ -1,15 +1,31 @@
 {
   "main": {
-    "id": "583b3a3f38cfa378",
+    "id": "7935494ecbc1a7d6",
     "type": "split",
     "children": [
       {
-        "id": "5fe8dde97adb02d0",
+        "id": "3e22b24cb3be1caa",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
-        }
+          "type": "markdown",
+          "state": {
+            "file": "README.md",
+            "mode": "source"
+          }
+        },
+        "group": "de26669dfa4c0df5"
+      },
+      {
+        "id": "bf190ed14235932b",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "README.md",
+            "mode": "preview"
+          }
+        },
+        "group": "de26669dfa4c0df5"
       }
     ],
     "direction": "vertical"
@@ -65,6 +81,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -82,9 +99,11 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "5fe8dde97adb02d0",
+  "active": "3e22b24cb3be1caa",
   "lastOpenFiles": [
-    "main.md",
+    "README.md",
+    "paper/README.md",
+    "paper/00-origin-paper.pdf",
     "original paper.md"
   ]
 }

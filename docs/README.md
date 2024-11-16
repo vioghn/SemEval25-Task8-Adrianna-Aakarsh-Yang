@@ -7,6 +7,8 @@
 ##### Shared Resources
 
 * Dataset [Google Drive](https://drive.google.com/drive/folders/1VhYY48JWrJ0c2YgyblSlqWfHTcJeVuRD)
+* [Obsedian: Markdown Editing](https://obsidian.md/)
+* 
 
 
 ##### Original SemEval Task-8

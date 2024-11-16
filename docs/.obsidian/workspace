@@ -7,11 +7,8 @@
         "id": "3e22b24cb3be1caa",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "README.md",
-            "mode": "source"
-          }
+          "type": "empty",
+          "state": {}
         },
         "group": "ec96c6f7485a612d"
       },
@@ -19,11 +16,8 @@
         "id": "b16a76ca7256dfef",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "README.md",
-            "mode": "preview"
-          }
+          "type": "empty",
+          "state": {}
         },
         "group": "ec96c6f7485a612d"
       }
@@ -81,7 +75,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,8 +94,8 @@
   },
   "active": "3e22b24cb3be1caa",
   "lastOpenFiles": [
-    "README.md",
     "paper/README.md",
+    "README.md",
     "paper/05-mcts-survey.pdf",
     "paper/04-bridging-language-and-thought.pdf",
     "paper/00-origin-paper.pdf",

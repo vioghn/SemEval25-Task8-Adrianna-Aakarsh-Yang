@@ -31,7 +31,7 @@
  
 ##### General Program Induction Papers 
 * [Human-level concept learning through probabilistic program induction](https://www.cs.cmu.edu/~rsalakhu/papers/LakeEtAl2015Science.pdf)
-* [Dream Coder](https://arxiv.org/pdf/2006.08381)
+* [DreamCoder: Growing generalizable, interpretable knowledge with wake-sleep Bayesian program learning](https://arxiv.org/pdf/2006.08381)
 
 ##### Reinforcement Learning Applied in Mathematics 
 * [AlphaProof](https://deepmind.google/discover/blog/ai-solves-imo-problems-at-silver-medal-level/)

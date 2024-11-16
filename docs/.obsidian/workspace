@@ -1,0 +1,90 @@
+{
+  "main": {
+    "id": "583b3a3f38cfa378",
+    "type": "split",
+    "children": [
+      {
+        "id": "5fe8dde97adb02d0",
+        "type": "leaf",
+        "state": {
+          "type": "empty",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "32cfb4bd67a356bd",
+    "type": "split",
+    "children": [
+      {
+        "id": "477b96e96d29bdd6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2d360d4779ebd58a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "b18c9fdaf1e27790",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "7337d6eee2d5856c",
+    "type": "split",
+    "children": [
+      {
+        "id": "ab1b475f424a3975",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b2f9e6ed57c70f76",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "5fe8dde97adb02d0",
+  "lastOpenFiles": [
+    "main.md",
+    "original paper.md"
+  ]
+}

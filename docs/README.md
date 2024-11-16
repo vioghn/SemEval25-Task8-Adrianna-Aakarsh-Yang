@@ -4,6 +4,11 @@
 ##### Deadlines
 * Due: January 9, 2025 at 1:00 AM GMT+1
 
+##### Shared Resources
+
+* Dataset [Google Drive](https://drive.google.com/drive/folders/1VhYY48JWrJ0c2YgyblSlqWfHTcJeVuRD)
+
+
 ##### Original SemEval Task-8
 [Question Answering over Tabular Data with DataBench: A Large-Scale Empirical Evaluation of LLM](./paper/00-origin-paper.pdf)
 

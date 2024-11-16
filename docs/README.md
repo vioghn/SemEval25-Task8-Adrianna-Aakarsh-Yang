@@ -28,7 +28,7 @@
 	* [David Silver's Lectures](https://www.youtube.com/watch?v=2pWv7GOvuf0&list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ) 
 	* [Emma Brunskill](https://www.youtube.com/watch?v=FgzM3zpZ55o&list=PLoROMvodv4rOSOPzutgyCTapiGlY2Nd8u)
 	* [Tuebingen Course on RL](https://uni-tuebingen.de/en/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/distributed-intelligence/teaching/lectures/reinforcement-learning-lecture-ws-202425/)
-	* 
+	* [Sergey Levine](https://www.youtube.com/watch?v=JHrlF10v2Og&list=PL_iWQOsE6TfURIIhCrlt-wj9ByIVpbfGc)
 ##### Reinforcement Learning for Games
 * [AlphaGo](https://www.nature.com/articles/nature16961)
 * [MuZero](https://arxiv.org/abs/1911.08265)

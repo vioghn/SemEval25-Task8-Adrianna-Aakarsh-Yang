@@ -21,6 +21,7 @@
 ##### Reinforcement Learning for Games
 * [AlphaGo](https://www.nature.com/articles/nature16961)
 * [MuZero](https://arxiv.org/abs/1911.08265)
+* [Monte Carlo Tree Search Paper](./paper/05-mcts-survey.pdf)
 
 
 ##### Code Generation Papers

@@ -6,6 +6,9 @@ env.state
 env.action_space
 env.transition(s ,a , is_model_dynamic)
 env.equality_operator(s1, s2)
+
+
+grow up!!!!
 """
 import random
 from gymnasium import spaces

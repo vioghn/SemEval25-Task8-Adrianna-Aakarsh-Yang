@@ -29,12 +29,18 @@ def generate_random_sample_of_n_rows_json(df, n=10):
     return df.sample(n=n).to_json(orient='records', indent=4)
 
 def get_dataframe_by_id(df_id):
-  df = pd.read_parquet(f"hf://datasets/cardiffnlp/databench/data/{df_id}/all.parquet")
-  return df
+    parquet_file = f"hf://datasets/cardiffnlp/databench/data/{df_id}/all.parquet"
+    print(f"Loading {parquet_file}")
+    df = pd.read_parquet(parquet_file)
+    return df
 
 
 def prompt_generator(row, df):
     question = row['question']
+    df_random_sample = '{}'
+    if not row['dataset'] == "029_NYTimes":
+       df_random_sample = generate_dataframe_description_json(df) 
+    print(f"Generating:{question}, dataset:{row['dataset']}")
     prompt = f"""
 # Instructions: Generate ONLY python code. Do not include explanations.  
 # you can use pandas and numpy. Use the meta data information from df_schema, df_descprtion.
@@ -49,7 +55,7 @@ df_schema = {generate_dataframe_schma_json(df)}
 df_descrption = {generate_dataframe_description_json(df)}
 
 # Randome sample of 10 rows from the dataframe.
-df_random_sample = {generate_random_sample_of_n_rows_json(df)}
+df_random_sample = {df_random_sample}
 
 # TODO: complete the following function in one line, by completing the return statement. It should give the answer to: How many rows are there in this dataframe?
 def example(df: pd.DataFrame):
@@ -79,11 +85,11 @@ def generate_all_prompts(split="dev"):
   OUTPUT_DIR=f"/content/drive/MyDrive/TUE-WINTER-2024/CHALLENGES-CL/{split}-prompts"
   for row_idx in range(len(ds)):
       dataset_id = ds[row_idx]['dataset']
+      if dataset_id == "029_NYTimes":
+          continue
+      print(f"Generate prompt {row_idx}")
       create_prompt_file(ds, row_idx, dataset_map[dataset_id], split=split, output_dir=OUTPUT_DIR)
 
 
-generate_all_prompts()
-
-
-
+generate_all_prompts(split="train")
 

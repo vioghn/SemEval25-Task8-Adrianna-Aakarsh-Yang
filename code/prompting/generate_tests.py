@@ -185,26 +185,25 @@ def test_answer(random_seed):
     return prompt
 
 
-def process_idx(idx, 
-                    question_df=None,
-                    backing_dataset_map=None,
-                    model="nvidia/Llama-3.1-Nemotron-70B-Instruct",
-                    split="train"):
+def process_idx(idx, question_df=None,
+                                backing_dataset_map=None,
+                                model="nvidia/Llama-3.1-Nemotron-70B-Instruct",
+                                filtered_datasets=['029_NYTimes'],
+                                split="train"):
     """
     Process a single index to generate test cases.
     """
     print("-" * 20, idx, "-" * 20)
     max_attempts = 10
     found = False
-    semeval_train_qa = load_dataset("cardiffnlp/databench", name="semeval", split=split)
 
     # Skip if the test file already exists
-    #output_file = f"/content/drive/MyDrive/TUE-WINTER-2024/CHALLENGES-CL/test_cases/{split}/{MODEL}/test_case_{idx}.py"
     output_file = f"/content/drive/MyDrive/TUE-WINTER-2024/CHALLENGES-CL/test_cases/{split}/{model}/test_case_{idx}-2025-01-04.py"
-    if os.path.exists(output_file):
-        print("SKIPPING")
+    if os.path.exists(output_file) or question_df[idx]['dataset'] in set(filtered_datasets):
+        print(f"SKIPPING: {idx}")
         return
 
+    semeval_train_qa = load_dataset("cardiffnlp/databench", name="semeval", split=split)
     while max_attempts > 0 and not found:
         max_attempts -= 1
         try:
@@ -239,6 +238,7 @@ def process_idx(idx,
 def run(max_workers=24, split="train"):
     # Parallel execution using ThreadPoolExecutor
     semeval_train_qa = load_dataset("cardiffnlp/databench", name="semeval", split=split)
+
     datasets_map = fetch_all_dataframes(semeval_train_qa)
 
     with ThreadPoolExecutor(max_workers=max_workers) as executor:  # Adjust max_workers based on your system

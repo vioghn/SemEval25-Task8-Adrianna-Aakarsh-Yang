@@ -28,8 +28,6 @@ def get_dataframe_by_id(df_id):
     df = pd.read_parquet(parquet_file)
     return df
 
-
-
 def extract_code_from_response(response, idx=0):
   """
   """
@@ -160,7 +158,7 @@ df_random_sample = {df_random_sample}
 def answer(df: pd.DataFrame):
     # Use df to answer :{question}
     df.columns = {list(df.columns)}
-    pass // stub function leave as is.
+    pass # stub function leave as is.
 
 # Create a dummy data in the same format as actual data. so we can
 # answer unit test answer to: {question}.
@@ -179,8 +177,8 @@ def test_answer(random_seed):
     # TODO: Don't check datatypes only semantics.
     # assert that "answer" function is correct using dummy data.
     assert result #TODO: Make a unqique semantic test of functionality of "answer" function.
-    asert ... #TODO: complete this assert using information from dummy_data to test semantics.
-    asert ... #TODO: complete this assert using information from dummy_data to test semantics.
+    assert ... #TODO: complete this assert using information from dummy_data to test semantics.
+    assert ... #TODO: complete this assert using information from dummy_data to test semantics.
 """
     return prompt
 
@@ -188,6 +186,7 @@ def test_answer(random_seed):
 def process_idx(idx, question_df=None,
                                 backing_dataset_map=None,
                                 model="nvidia/Llama-3.1-Nemotron-70B-Instruct",
+                                regenerate=False,
                                 filtered_datasets=['029_NYTimes'],
                                 split="train"):
     """
@@ -199,18 +198,17 @@ def process_idx(idx, question_df=None,
 
     # Skip if the test file already exists
     output_file = f"/content/drive/MyDrive/TUE-WINTER-2024/CHALLENGES-CL/test_cases/{split}/{model}/test_case_{idx}-2025-01-04.py"
-    if os.path.exists(output_file) or question_df[idx]['dataset'] in set(filtered_datasets):
+    if (os.path.exists(output_file) and not regenerate) or question_df[idx]['dataset'] in set(filtered_datasets):
         print(f"SKIPPING: {idx}")
         return
 
-    semeval_train_qa = load_dataset("cardiffnlp/databench", name="semeval", split=split)
     while max_attempts > 0 and not found:
         max_attempts -= 1
         try:
             # Generate test prompt
             dataset_id = question_df[idx]['dataset']
             backing_dataset_df = backing_dataset_map[dataset_id]
-            test_prompt = test_prompt_generator(semeval_train_qa[idx], backing_dataset_df)
+            test_prompt = test_prompt_generator(question_df[idx], backing_dataset_df)
 
             # Get API completion
             completion = get_api_prompt_completion(test_prompt, model=model, max_tokens=4*1024)
@@ -235,15 +233,51 @@ def process_idx(idx, question_df=None,
             print("FAILED")
     return
 
-def run(max_workers=24, split="train"):
+def run(max_workers=24, split="train", regenerate=False):
     # Parallel execution using ThreadPoolExecutor
     semeval_train_qa = load_dataset("cardiffnlp/databench", name="semeval", split=split)
 
     datasets_map = fetch_all_dataframes(semeval_train_qa)
 
     with ThreadPoolExecutor(max_workers=max_workers) as executor:  # Adjust max_workers based on your system
-            executor.map(partial(process_idx, question_df=semeval_train_qa, backing_dataset_map=datasets_map), range(len(semeval_train_qa)))
+            executor.map(partial(process_idx, regenerate=regenerate, question_df=semeval_train_qa, backing_dataset_map=datasets_map, split=split), range(len(semeval_train_qa)))
 
 
-run(max_workers=15, split="train")
+def create_test_prompt_file(idx, question_df=None,
+                                    backing_dataset_map=None,
+                                    split="train",
+                                    regenerate=False,
+                                    filtered_datasets=['029_NYTimes']):
+    """
+    Process a single index to generate test cases.
+    """
+    print("-" * 20, idx, "-" * 20)
+    found = False
+    output_file = f"/content/drive/MyDrive/TUE-WINTER-2024/CHALLENGES-CL/test_cases/prompts/{split}/test_case_gen_prompt_{idx}.py"
+    if (os.path.exists(output_file) and not regenerate) or question_df[idx]['dataset'] in set(filtered_datasets):
+        print(f"SKIPPING: {idx}")
+        return
 
+    try:
+        # Generate test prompt
+        dataset_id = question_df[idx]['dataset']
+        backing_dataset_df = backing_dataset_map[dataset_id]
+        test_prompt = test_prompt_generator(question_df[idx], backing_dataset_df)
+        with open(output_file, "w") as f:
+            f.write(test_prompt)
+    except Exception as e:
+        print(f"Error in test_answer: {e}")
+        print("FAILED")
+
+def create_all_test_prompts(split="train", regenerate=False):
+    semeval_train_qa = load_dataset("cardiffnlp/databench", name="semeval", split=split)
+    datasets_map = fetch_all_dataframes(semeval_train_qa)
+    for idx in range(len(semeval_train_qa)):
+        create_test_prompt_file(idx, question_df=semeval_train_qa, 
+                                        backing_dataset_map = datasets_map, 
+                                        regenerate=regenerate,
+                                        split=split)
+
+run(max_workers=15, split="dev", regenerate=True)
+
+# create_all_test_prompts(split="train", regenerate=True)

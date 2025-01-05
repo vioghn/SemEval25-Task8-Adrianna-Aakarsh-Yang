@@ -233,14 +233,14 @@ def process_idx(idx, question_df=None,
             print("FAILED")
     return
 
-def run(max_workers=24, split="train", regenerate=False):
+def run(max_workers=24, split="train", regenerate=False, model="nvidia/Llama-3.1-Nemotron-70B-Instruct"):
     # Parallel execution using ThreadPoolExecutor
     semeval_train_qa = load_dataset("cardiffnlp/databench", name="semeval", split=split)
 
     datasets_map = fetch_all_dataframes(semeval_train_qa)
 
     with ThreadPoolExecutor(max_workers=max_workers) as executor:  # Adjust max_workers based on your system
-            executor.map(partial(process_idx, regenerate=regenerate, question_df=semeval_train_qa, backing_dataset_map=datasets_map, split=split), range(len(semeval_train_qa)))
+            executor.map(partial(process_idx,  regenerate=regenerate, question_df=semeval_train_qa, backing_dataset_map=datasets_map, split=split), range(len(semeval_train_qa)))
 
 
 def create_test_prompt_file(idx, question_df=None,
@@ -278,6 +278,6 @@ def create_all_test_prompts(split="train", regenerate=False):
                                         regenerate=regenerate,
                                         split=split)
 
-run(max_workers=15, split="dev", regenerate=True)
+run(max_workers=15, split="dev", regenerate=False)
 
 # create_all_test_prompts(split="train", regenerate=True)

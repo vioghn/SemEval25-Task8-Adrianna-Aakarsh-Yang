@@ -4,36 +4,87 @@
     "type": "split",
     "children": [
       {
-        "id": "83234267e1f52d10",
+        "id": "e1381779eb83c28b",
         "type": "tabs",
         "children": [
-          {
-            "id": "00b32db12994e606",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "README"
-            }
-          },
           {
             "id": "2fa02d0165c0014a",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "paper/01-code-generation.pdf"
+                "file": "paper/07-02-Large Language Models are few-shot Table Reasoners.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "01-code-generation"
+              "title": "07-02-Large Language Models are few-shot Table Reasoners"
+            }
+          },
+          {
+            "id": "665afdd9706e494c",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "paper/07-03-code-generating.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "07-03-code-generating"
+            }
+          },
+          {
+            "id": "06285075be3f68dd",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "paper/07-04-IFT-codeLLM.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "07-04-IFT-codeLLM"
+            }
+          },
+          {
+            "id": "886a22623cf94f52",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "paper/07-05-source-code-is-all-you-need.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "07-05-source-code-is-all-you-need"
+            }
+          },
+          {
+            "id": "0a86cc5497aa200f",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "paper/07-06-WizardCoder.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "07-06-WizardCoder"
+            }
+          },
+          {
+            "id": "fe2eb7b442cd8ad9",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "paper/08-01-Unstructured and Structured.pdf",
+                "page": 1,
+                "left": -19,
+                "top": 846,
+                "zoom": 0.8063486517178587
+              },
+              "icon": "lucide-file-text",
+              "title": "08-01-Unstructured and Structured"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -131,12 +182,28 @@
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "command-palette:Open command palette": false,
-      "markdown-importer:Open format converter": false
+      "markdown-importer:Open format converter": false,
+      "pdf-plus:PDF++: Toggle auto-copy": false,
+      "pdf-plus:PDF++: Toggle auto-focus": false,
+      "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "00b32db12994e606",
+  "active": "fe2eb7b442cd8ad9",
   "lastOpenFiles": [
+    "paper/08-03-Free-form Table Question Answering.pdf",
     "paper/01-code-generation.pdf",
+    "paper/02-alpha-code.pdf",
+    "paper/03-mastering-go-without-human-knowledge.pdf",
+    "paper/10-00-QA-The_TREC_question_answering_track.pdf",
+    "paper/08-04-neural-sql-executor.pdf",
+    "paper/08-02-A Survey on Table Question Answering.pdf",
+    "paper/00-origin-paper.pdf",
+    "paper/04-bridging-language-and-thought.pdf",
+    "paper/05-mcts-survey.pdf",
+    "paper/07-01-Dataset for Open Domain Question Answering.pdf",
+    "paper/README.md",
+    "canvas/Taxonomy.canvas",
+    "Untitled.md",
     "README.md"
   ]
 }

@@ -197,7 +197,7 @@ def process_idx(idx, question_df=None,
     found = False
 
     # Skip if the test file already exists
-    output_file = f"/content/drive/MyDrive/TUE-WINTER-2024/CHALLENGES-CL/test_cases/{split}/{model}/test_case_{idx}-2025-01-04.py"
+    output_file = f"/content/drive/MyDrive/TUE-WINTER-2024/CHALLENGES-CL/test_cases/{split}/{model}/test_case_{idx}.py"
     if (os.path.exists(output_file) and not regenerate) or question_df[idx]['dataset'] in set(filtered_datasets):
         print(f"SKIPPING: {idx}")
         return
@@ -240,7 +240,7 @@ def run(max_workers=24, split="train", regenerate=False, model="nvidia/Llama-3.1
     datasets_map = fetch_all_dataframes(semeval_train_qa)
 
     with ThreadPoolExecutor(max_workers=max_workers) as executor:  # Adjust max_workers based on your system
-            executor.map(partial(process_idx,  regenerate=regenerate, question_df=semeval_train_qa, backing_dataset_map=datasets_map, split=split), range(len(semeval_train_qa)))
+            executor.map(partial(process_idx, model=model, regenerate=regenerate, question_df=semeval_train_qa, backing_dataset_map=datasets_map, split=split), range(len(semeval_train_qa)))
 
 
 def create_test_prompt_file(idx, question_df=None,
@@ -278,6 +278,6 @@ def create_all_test_prompts(split="train", regenerate=False):
                                         regenerate=regenerate,
                                         split=split)
 
-run(max_workers=15, split="dev", regenerate=False)
+run(max_workers=15, split="dev", regenerate=False, model="Qwen/Qwen2.5-Coder-32B-Instruct")
 
 # create_all_test_prompts(split="train", regenerate=True)
